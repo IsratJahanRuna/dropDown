@@ -1,35 +1,29 @@
-import { render } from '@testing-library/react';
-import React, { useEffect, useState } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 
 
 
 const DropDown = () => {
-    // const [options, setOptions] = useState()
-    // useEffect( () => {
-    //     fetch('http://127.0.0.1:8000/api/dropDown')
-    //     .then(res => res.json())
-    //     .then(data =>setOptions(data))
-    // })
-
-    this.state = [
-       
-        {products: "T-Shirt", id: 1},
-        {products: "Shirt", id: 2},
-
-    ];
+    const [options, setOptions] = useState()
+    useEffect( () => {
+        fetch('http://127.0.0.1:8000/api/dropDown')
+        .then(res => res.json())
+        .then(data =>console.log(data))
+    })
             
            
     return (
         
        
         <div class="container p-5">
-            {this.state.map((option) =>{
-                return(
-               <h1>{option.products}</h1>
-                );
+            
+                <select class="custom-slect">
+                {/* {options.map(option =>
+                <option value={option}>{option.products}</option>
+)} */}
+                </select>
 
-            }
-                )}
+        
+                
            
                 
             
